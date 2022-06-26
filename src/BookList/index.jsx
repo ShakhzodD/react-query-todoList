@@ -2,6 +2,7 @@ import React from "react";
 import { useQuery, useMutation, useQueryClient } from "react-query";
 import { getAllBooks, removeBooks } from "../api";
 import { Link } from "react-router-dom";
+import TableComponent from "../components/Table";
 export const BookList = () => {
   const { data, error, isLoading, isError } = useQuery("user", getAllBooks);
   const querClient = useQueryClient();
@@ -48,6 +49,13 @@ export const BookList = () => {
             : "--"}
         </tbody>
       </table>
+
+      <TableComponent
+        items={data}
+        columns={[
+          { title: "id", dataIndex: "id", render: value => <>{value}</> },
+        ]}
+      />
     </div>
   );
 };

@@ -16,6 +16,9 @@ export default function Navbar() {
         <Link className="mx-5" to="/update-book">
           update
         </Link>
+        <Link className="mx-5" to="/table">
+          table
+        </Link>
       </nav>
       <Outlet />
     </div>
